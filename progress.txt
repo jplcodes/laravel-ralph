@@ -1,0 +1,4 @@
+# Ralph Progress Log
+
+This file tracks progress across iterations. Claude will append updates here.
+

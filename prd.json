@@ -1,0 +1,13 @@
+[
+  {
+    "feature": "Example Feature",
+    "category": "core",
+    "description": "Description of what this feature does",
+    "tested": false,
+    "steps": [
+      "Step 1: Describe user action or system behavior",
+      "Step 2: Describe expected outcome",
+      "Step 3: Describe verification criteria"
+    ]
+  }
+]
