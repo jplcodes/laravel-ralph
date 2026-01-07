@@ -20,20 +20,26 @@ The technique is named after Ralph Wiggum from The Simpsons—embodying persiste
 
 ## Designing Your PRD
 
-You can use Claude to help develop `prd.json`. Describe your project at a high level and let Claude break it down into sprint tasks. This positions you as the project designer while AI handles the detailed breakdown.
+Use the built-in `/prd` command to quickly generate focused sprint plans for your features:
 
 ```bash
-# Example: Ask Claude to generate your PRD
-claude "I want to build a user authentication system with registration,
-login, password reset, and email verification. Break this down into
-features for prd.json with clear acceptance criteria."
+# Generate a sprint plan for any feature idea
+/prd user authentication system
+/prd payment processing with Stripe
+/prd admin dashboard for content management
 ```
 
-Review and refine the generated PRD, then let Ralph execute it.
+The `/prd` command will:
+- Analyze your feature idea and determine the appropriate category
+- Generate comprehensive Laravel implementation steps
+- Replace `prd.json` with a focused single-feature sprint
+- Create as many steps as needed for the feature complexity
+
+This creates a dedicated sprint for one feature at a time, allowing Ralph to work systematically through each feature before moving to the next.
 
 ## Quick Start
 
-1. **Define your features** in `prd.json` (or generate with Claude):
+1. **Define your features** using the `/prd` command or manually in `prd.json`:
 
 ```json
 [
