@@ -39,7 +39,7 @@ echo "---" >> "$PROGRESS_FILE"
 echo "## $(date)" >> "$PROGRESS_FILE"
 
 # Run Claude Code with the prompt
-cat "$PROMPT_FILE" | claude
+claude -p "$(cat "$PROMPT_FILE")"
 
 echo ""
 echo "--- Running validation: composer test ---"

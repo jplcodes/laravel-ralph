@@ -88,7 +88,7 @@ while [ $iteration -lt $MAX_ITERATIONS ]; do
     echo "## Iteration $iteration - $(date)" >> "$PROGRESS_FILE"
 
     # Run Claude Code with the prompt
-    cat "$PROMPT_FILE" | claude
+    claude -p "$(cat "$PROMPT_FILE")"
 
     echo ""
     echo "--- Running validation: composer test ---"
