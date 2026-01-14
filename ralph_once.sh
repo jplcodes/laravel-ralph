@@ -40,7 +40,7 @@ echo "## $(date)" >> "$PROGRESS_FILE"
 
 # Run Claude Code with the prompt
 echo "--- Running Claude Code ---"
-claude -p "$(cat "$PROMPT_FILE")"
+claude -p "$(cat "$PROMPT_FILE")" --allowedTools "Bash" "Edit" "Read" "Write" "Glob" "Grep"
 echo "--- Claude Code completed ---"
 
 echo ""
