@@ -66,9 +66,8 @@ fi
 
 # Function to check if all features are tested
 all_features_tested() {
-    # Count features where tested is false
-    untested=$(grep -c '"tested": false' "$PRD_FILE" 2>/dev/null || echo "0")
-    [ "$untested" -eq 0 ]
+    # Returns true if no untested features exist
+    ! grep -q '"tested": false' "$PRD_FILE" 2>/dev/null
 }
 
 echo "Starting Ralph loop with $PROMPT_FILE (max $MAX_ITERATIONS iterations)"
@@ -76,6 +75,20 @@ echo "PRD: $PRD_FILE"
 echo "Progress: $PROGRESS_FILE"
 echo "Stop condition: composer test passes AND all PRD features tested"
 echo "---"
+
+# Check stop conditions before first iteration
+echo ""
+echo "--- Checking if already complete ---"
+if composer test 2>/dev/null; then
+    if all_features_tested; then
+        echo "" >> "$PROGRESS_FILE"
+        echo "=== ALREADY COMPLETE: All features tested before first iteration ===" >> "$PROGRESS_FILE"
+        echo ""
+        echo "=== SUCCESS: All tests already pass and all PRD features already tested ==="
+        exit 0
+    fi
+fi
+echo "--- Not yet complete, starting iterations ---"
 
 while [ $iteration -lt $MAX_ITERATIONS ]; do
     iteration=$((iteration + 1))
