@@ -1,6 +1,6 @@
 # Task
 
-Implement the features defined in `prd.json`. Work through each feature systematically.
+Implement ONE feature from `prd.json`, then stop.
 
 ## Instructions
 
@@ -12,6 +12,7 @@ Implement the features defined in `prd.json`. Work through each feature systemat
 6. Run `composer test` to validate
 7. If tests pass, update `prd.json` to set `"tested": true` for that feature
 8. Update `progress.txt` with what you accomplished this iteration
+9. **STOP** - Do not continue to the next feature. Each feature should be implemented in a separate session to keep context focused.
 
 ## Constraints
 
