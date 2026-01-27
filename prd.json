@@ -1,13 +1,40 @@
 [
   {
-    "feature": "Example Feature",
+    "id": "FEAT-001",
+    "feature": "Example Foundation Feature",
     "category": "core",
-    "description": "Description of what this feature does",
+    "description": "Foundation feature that other features depend on",
     "tested": false,
+    "blocked": false,
+    "depends_on": [],
+    "acceptance_criteria": [
+      "Criterion 1: Specific testable requirement",
+      "Criterion 2: Another measurable outcome"
+    ],
+    "size": "S",
     "steps": [
-      "Step 1: Describe user action or system behavior",
+      "Step 1: Describe implementation action",
       "Step 2: Describe expected outcome",
       "Step 3: Describe verification criteria"
+    ]
+  },
+  {
+    "id": "FEAT-002",
+    "feature": "Example Dependent Feature",
+    "category": "core",
+    "description": "Feature that requires FEAT-001 to be complete first",
+    "tested": false,
+    "blocked": true,
+    "depends_on": ["FEAT-001"],
+    "acceptance_criteria": [
+      "Criterion 1: Builds on foundation from FEAT-001",
+      "Criterion 2: Verifiable outcome"
+    ],
+    "size": "S",
+    "steps": [
+      "Step 1: Use foundation from FEAT-001",
+      "Step 2: Implement dependent functionality",
+      "Step 3: Verify integration works"
     ]
   }
 ]
